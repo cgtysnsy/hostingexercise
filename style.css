@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+:root {
+  --primary-color: #79589f;
+  --secondary-color: #6e5baa;
+  --dark-color: #260040;
+  --light-color: #f4f4f4;
+  --success-color: #5cb85c;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+/* Navbar style*/
+.navbar {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  align-items: center;
+}
+ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+ul li a {
+  text-decoration: none;
+  color: var(--light-color);
+  padding-bottom: 10px;
+}
+ul li a:hover {
+  border-bottom: solid 1px var(--light-color);
+}
+/* Showcase style */
+.showcase {
+  height: 400px;
+  background-color: var(--primary-color);
+  padding: 0 1rem;
+  position: relative;
+}
+.showcase .container {
+  display: flex;
+  flex-direction: column;
+}
+.text-showcase {
+  color: white;
+  text-align: center;
+  animation: enterFromTop 1s ease-in;
+}
+.text-showcase h1 {
+  font-size: 40px;
+  padding: 1.5rem 0;
+}
+.text-showcase p {
+  font-size: 16px;
+  line-height: 23px;
+  margin-bottom: 1rem;
+  width: 80%;
+  margin: auto;
+}
+.text-showcase button {
+  margin-top: 2rem;
+  background-color: transparent;
+  border: 1px solid var(--light-color);
+  color: var(--light-color);
+  padding: 0.8rem 1.6rem;
+  border-radius: 5px;
+}
+/* showcase form*/
+.showcase::after {
+  content: "";
+  width: 98%;
+  height: 80px;
+  position: absolute;
+
+  background-color: white;
+  bottom: -70px;
+  transform: skewY(-3deg);
+  overflow: hidden;
+}
+
+.form-showcase {
+}
+.form-showcase form {
+  background-color: white;
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+  z-index: 100;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 2rem;
+  -webkit-box-shadow: 5px 6px 9px -3px rgba(0, 0, 0, 0.81);
+  box-shadow: 5px 6px 9px -3px rgba(0, 0, 0, 0.81);
+  animation: enterFromBottom 1s ease-in;
+}
+.form-showcase h2 {
+  text-align: center;
+}
+.form-showcase input {
+  position: relative;
+  margin: 25px;
+  border: none;
+  border-bottom: solid 1px grey;
+}
+.form-showcase button {
+  width: 35%;
+  margin: 1rem 0.5rem;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--light-color);
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+}
+/* Desktop Version*/
+@media screen and (min-width: 500px) {
+  .text-showcase {
+    max-width: 40%;
+  }
+
+  .showcase .container {
+    flex-direction: row;
+  }
+  .form-showcase form {
+    width: 100%;
+    animation: enterFromRight 2s ease-in;
+  }
+  .text-showcase {
+    animation: enterFromLeft 1s ease-out;
+  }
+}
+/* Animation */
+
+@keyframes enterFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes enterFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes enterFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes enterFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
